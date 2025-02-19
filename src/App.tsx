@@ -19,6 +19,7 @@ export const goodsFromServer = [
 enum SortType {
   alphabet = 'alphabet',
   length = 'length',
+  default = '',
 }
 
 function getSortedGoods(
@@ -49,7 +50,7 @@ function getSortedGoods(
 }
 
 export const App: React.FC = () => {
-  const [sortField, setSortField] = useState('');
+  const [sortField, setSortField] = useState(SortType.default);
   const [isReversed, setIsReversed] = useState(false);
 
   const visibleGoods = getSortedGoods(
